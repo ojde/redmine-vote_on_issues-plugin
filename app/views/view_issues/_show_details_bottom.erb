@@ -1,0 +1,51 @@
+<% if @project.module_enabled?(:vote_on_issues) %>
+
+  <div class="splitcontent">
+    <% if authorize_for('issues', 'view_votes') %>
+      <div class="splitcontentleft">
+        <div class="status attribute">
+          <div class="label"><%= l(:view_issues_label_votes) %>:</div>
+          <div class="value">
+            <div class="vote_on_issues-issue-votes-nowrap">
+                <span id="vote_on_issues_nVotesUp"></span><%= image_tag 'arrow-u-r-green.png', :class => 'vote_on_issues-icon-votes', :plugin => 'vote_on_issues' %>
+            </div>
+            <div class="vote_on_issues-issue-votes-nowrap">
+                <span id="vote_on_issues_nVotesDn"></span><%= image_tag 'arrow-d-r-red.png', :class => 'vote_on_issues-icon-votes', :plugin => 'vote_on_issues' %>
+            </div>
+            
+            <script>
+              vote_on_issues.showVotesOnIssue(<%= VoteOnIssue.getUpVoteCountOnIssue(@issue.id) %>, <%= VoteOnIssue.getDnVoteCountOnIssue(@issue.id) %>);
+            </script>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  
+    <% if authorize_for('issues', 'cast_vote') %>
+      <div class="splitcontentleft">
+        <div class="status attribute">
+          <div class="label"><%= l(:view_issues_my_vote) %>:</div>
+          <div class="value">
+            <div class="vote_on_issues-issue-votes-nowrap">
+              <span id="vote_on_issues_MyVoteNil">&ndash;</span>
+              <%= image_tag('arrow-u-r-green.png', :id => 'vote_on_issues_MyVoteUpOn', :style => 'display:none', :class => 'vote_on_issues-icon-vote', :plugin => 'vote_on_issues') %> 
+              <%= image_tag('arrow-d-r-red.png',   :id => 'vote_on_issues_MyVoteDnOn', :style => 'display:none', :class => 'vote_on_issues-icon-vote', :plugin => 'vote_on_issues') %> 
+            </div>
+            
+            <div class="vote_on_issues-issue-votes-nowrap">
+              <span class="class="vote_on_issues-my-vote-opt">&nbsp;&nbsp;<%= l(:view_issues_my_vote_opt) %>:</span>
+              <%= link_to(image_tag('arrow-u-r-blank.png', :id => 'vote_on_issues_MyVoteUpOff', :style => 'display:none', :class => 'vote_on_issues-icon-vote', :plugin => 'vote_on_issues'), {:controller => 'vote_on_issues', :action => 'cast_vote', :issue_id => @issue, :vote_val => 'vup' }, remote: true, :class => 'vote_on_issues-icon-vote', :title => l(:view_issues_my_vote_opt_up) ) %> 
+              <%= link_to(image_tag('arrow-d-r-blank.png', :id => 'vote_on_issues_MyVoteDnOff', :style => 'display:none', :class => 'vote_on_issues-icon-vote', :plugin => 'vote_on_issues'), {:controller => 'vote_on_issues', :action => 'cast_vote', :issue_id => @issue, :vote_val => 'vdn' }, remote: true, :class => 'vote_on_issues-icon-vote', :title => l(:view_issues_my_vote_opt_dn) ) %> 
+              <%= link_to(image_tag('delete-black.png', :id => 'vote_on_issues_MyVoteDelete', :style => 'display:none', :class => 'vote_on_issues-icon-vote', :plugin => 'vote_on_issues'), {:controller => 'vote_on_issues', :action => 'cast_vote', :issue_id => @issue, :vote_val => 'nil' }, remote: true, :class => 'vote_on_issues-icon-vote', :title => l(:view_issues_my_vote_opt_nil) ) %> 
+            </div>
+            
+            <script>
+              vote_on_issues.showMyVote(<%= VoteOnIssue.getMyVote(@issue) %>);
+            </script>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+    
+<% end %>

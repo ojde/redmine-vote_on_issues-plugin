@@ -1,0 +1,21 @@
+div.vote_on_issues-issue-votes-nowrap {
+    white-space:nowrap;
+    float: left;
+}
+span.vote_on_issues-my-vote-opt {
+    clear:left;
+}
+img.vote_on_issues-icon-votes {
+    width:0.8em;
+    height:0.8em;
+    margin-left:0.2em;
+    margin-right:0.8em;
+}    
+.vote_on_issues-icon-vote {
+    text-decoration: none !important;
+}
+img.vote_on_issues-icon-vote {
+    margin-left:0.2em;
+    width:0.8em;
+    height:0.8em;
+}

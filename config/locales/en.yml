@@ -1,0 +1,20 @@
+# English strings go here for Rails i18n
+en:
+  # my_label: "My label"
+  project_module_vote_on_issues: "Vote On Issues"
+
+  permission_cast_votes: "Vote on issues"  
+  permission_view_votes: "View votes on issue"
+  permission_view_voter: "View voters"
+  
+  view_issues_label_votes: "Votes"
+  view_issues_my_vote: "My vote"
+  view_issues_my_vote_opt: "Change"
+  
+  view_issues_my_vote_opt_up: "Vote up"
+  view_issues_my_vote_opt_dn: "Vote down"
+  view_issues_my_vote_opt_nil: "Withdraw vote"
+
+  field_sum_votes_up: "Votes Up"
+  field_sum_votes_dn: "Votes Down"
+  
