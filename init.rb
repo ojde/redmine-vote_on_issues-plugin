@@ -21,7 +21,7 @@ Redmine::Plugin.register :vote_on_issues do
   
   project_module :vote_on_issues do
     permission :cast_votes, {:issues => :cast_vote }, :require => :loggedin
-    permission :view_votes, {:issues => :view_votes}, :require => :loggedin
+    # permission :view_votes, {:issues => :view_votes}, :require => :loggedin
     # permission :view_voter, {:issues => :view_voter}, :require => :loggedin   
   end       
 end

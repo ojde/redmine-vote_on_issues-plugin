@@ -1,7 +1,7 @@
 <% if @project.module_enabled?(:vote_on_issues) %>
 
   <div class="splitcontent">
-    <% if authorize_for('issues', 'view_votes') %>
+    <%# if authorize_for('issues', 'view_votes') %>
       <div class="splitcontentleft">
         <div class="status attribute">
           <div class="label"><%= l(:view_issues_label_votes) %>:</div>
@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-    <% end %>
+    <%# end %>
   
     <% if authorize_for('issues', 'cast_vote') %>
       <div class="splitcontentleft">
