@@ -1,3 +1,19 @@
-= vote_on_issues
+= Vote On Issues
 
-Description goes here
+A plugin for redmine which allows users to up- or down-vote issues.
+
+== Usage
+
+* Install plugin
+* Enable for project
+* Enable "Vote on Issue" permission for Roles. (Minimum requirement is
+  user being logged in.)
+
+Users can now up- or down-vote on issues, change their votes, or withdraw
+them again.
+
+There are Up- and down-votes columns available for the issue listing.
+
+== Copyright
+
+Copyright (c) 2017 Ole Jungclaussen. See LICENSE for details.
