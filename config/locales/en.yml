@@ -10,6 +10,11 @@ en:
   permission_view_voter: "View voters"
   
   view_issues_label_votes: "Votes"
+  
+  view_issues_label_voters: "Voters"
+  view_issues_show_voters: "Show voters"
+  view_issues_issue_voters: "List of Voters"
+  
   view_issues_my_vote: "My vote"
   view_issues_my_vote_opt: "Change"
   

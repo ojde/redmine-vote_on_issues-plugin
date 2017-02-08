@@ -1,0 +1,12 @@
+
+vote_on_issues.clearListOfVoters();
+
+<% @UpVotes.each do |vote| %>
+    vote_on_issues.addToListOfVoters(<%= vote['vote_val'] %>, "<%= vote['user_login'] %>");
+<% end %>
+
+<% @DnVotes.each do |vote| %>
+    vote_on_issues.addToListOfVoters(<%= vote['vote_val'] %>, "<%= vote['user_login'] %>");
+<% end %>
+
+vote_on_issues.showListOfVoters();

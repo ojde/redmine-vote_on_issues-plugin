@@ -48,4 +48,11 @@ class VoteOnIssuesController < ApplicationController
     
     # Auto loads /app/views/vote_on_issues/cast_vote.js.erb
   end
+  
+  def show_voters
+    @issue = Issue.find(params[:issue_id])
+    @UpVotes = VoteOnIssue.getListOfUpVotersOnIssue(params[:issue_id])
+    @DnVotes = VoteOnIssue.getListOfDnVotersOnIssue(params[:issue_id])
+    # Auto loads /app/views/vote_on_issues/show_voters.js.erb
+  end
 end
