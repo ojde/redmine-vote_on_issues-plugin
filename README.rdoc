@@ -16,7 +16,7 @@ Developed on Redmine 3.3.2
   always the user being logged in)
   
   * "Vote on issue": Up- or down-vote on issues; change own votes or withdraw
-     them. See own votes.
+    them. See own votes.
 
   * "View votes": See the total number of votes on an issue.
   
