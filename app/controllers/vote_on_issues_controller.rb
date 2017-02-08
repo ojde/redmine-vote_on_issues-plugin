@@ -7,6 +7,11 @@ class VoteOnIssuesController < ApplicationController
   # TODO - find out how this works
   #before_filter :authorize_global
   #before_filter :authorize
+  
+  def index
+    @project = Project.find(params[:project_id])
+    @votes = VoteOnIssue.all
+  end
 
   def cast_vote
     @iMyVote = 0;

@@ -12,7 +12,7 @@ Issue.send(:include, VoteOnIssues::Patches::QueryPatch)
 Redmine::Plugin.register :vote_on_issues do
   name 'Vote On Issues'
   description 'This plugin allows to up- and down-vote issues.'
-  version '1.0.0'
+  version '1.0.1'
   url 'https://github.com/ojde/redmine-vote_on_issues-plugin'
   author 'Ole Jungclaussen'
   author_url 'https://jungclaussen.com'
@@ -21,9 +21,22 @@ Redmine::Plugin.register :vote_on_issues do
   
   project_module :vote_on_issues do
     permission :cast_votes, {:issues => :cast_vote }, :require => :loggedin
-    # permission :view_votes, {:issues => :view_votes}, :require => :loggedin
+    permission :view_votes, {:issues => :view_votes}, :require => :loggedin
     # permission :view_voter, {:issues => :view_voter}, :require => :loggedin   
-  end       
+  end
+
+  # permission for menu
+  # permission :vote_on_issues, { :vote_on_issues => [:index] }, :public => true
+  # menu :project_menu,
+  #   :vote_on_issues, 
+  #   { :controller => 'vote_on_issues', :action => 'index' },
+  #   :caption => :menu_title,
+  #   :after => :issues,
+  #   :param => :project_id,
+  #   :if =>  Proc.new {
+  #     User.current.allowed_to?(:view_votes, nil, :global => true)
+  #   }
+  
 end
 
 class VoteOnIssuesListener < Redmine::Hook::ViewListener

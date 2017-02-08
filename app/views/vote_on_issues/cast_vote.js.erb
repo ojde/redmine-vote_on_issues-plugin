@@ -1,2 +1,4 @@
-vote_on_issues.showVotesOnIssue(<%= @nVotesUp %>, <%= @nVotesDn %>);
+<% if User.current.allowed_to?(:view_votes, nil, :global => true) %>
+    vote_on_issues.showVotesOnIssue(<%= @nVotesUp %>, <%= @nVotesDn %>);
+<% end %>
 vote_on_issues.showMyVote(<%= @iMyVote %>);
