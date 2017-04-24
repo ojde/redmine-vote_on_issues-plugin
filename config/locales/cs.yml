@@ -1,0 +1,27 @@
+# Czech strings go here for Rails i18n
+cs:
+  # my_label: "My label"
+  project_module_vote_on_issues: "Hlasování o úkolech"
+
+  menu_title: "Hlasování"
+
+  permission_cast_votes: "Hlasování o úkolech"
+  permission_view_votes: "Zobrazit hlasy"
+  permission_view_voter: "Zobrazit hlasující"
+
+  view_issues_label_votes: "Hlasování"
+
+  view_issues_label_voters: "Seznam hlasujících"
+  view_issues_show_voters: "Ukázat hlasující"
+  view_issues_issue_voters: "Seznam hlasujících"
+
+  view_issues_my_vote: "Můj hlas"
+  view_issues_my_vote_opt: "Změnit"
+
+  view_issues_my_vote_opt_up: "Hlasovat pro"
+  view_issues_my_vote_opt_dn: "Hlasovat proti"
+  view_issues_my_vote_opt_nil: "Odebrat hlas"
+
+  field_sum_votes_up: "Hlasy pro"
+  field_sum_votes_dn: "Hlasy proti"
+
