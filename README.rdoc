@@ -1,4 +1,4 @@
-= Vote On Issues
+redmine-vote_on_issues-plugin
 
 A plugin for Redmine[www.redmine.org] which allows users to up- or down-vote issues.
 
