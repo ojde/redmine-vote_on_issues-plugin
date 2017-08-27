@@ -8,6 +8,11 @@ issue_query.add_available_column(VOI_QueryColumn.new(:sum_votes_up, :sortable =>
 issue_query.add_available_column(VOI_QueryColumn.new(:sum_votes_dn, :sortable => '(SELECT abs(sum(vote_val)) FROM vote_on_issues WHERE vote_val < 0 AND issue_id=issues.id )'))
 Issue.send(:include, VoteOnIssues::Patches::QueryPatch)
 
+ActionDispatch::Callbacks.to_prepare do
+  IssuesController.class_eval do
+    helper :vote_on_issues
+  end
+end
 
 Redmine::Plugin.register :vote_on_issues do
   name 'Vote On Issues'

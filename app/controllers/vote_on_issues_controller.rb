@@ -25,8 +25,6 @@ class VoteOnIssuesController < ApplicationController
       @vote.save
     end
 
-    find_number_of_votes
-
     # Auto loads /app/views/vote_on_issues/cast_vote.js.erb
   end
 
@@ -43,18 +41,13 @@ class VoteOnIssuesController < ApplicationController
     end
     respond_to do |format|
       format.js do
-        find_number_of_votes
+        @iMyVote = 0
         render 'create'
       end
     end
   end
 
   private
-
-  def find_number_of_votes
-    @nVotesUp = VoteOnIssue.getUpVoteCountOnIssue(params[:issue_id])
-    @nVotesDn = VoteOnIssue.getDnVoteCountOnIssue(params[:issue_id])
-  end
 
   def find_issue_by_id
     @issue = Issue.find(params[:issue_id])

@@ -7,10 +7,10 @@
           <div class="label"><%= l(:view_issues_label_votes) %>:</div>
           <div class="value">
             <div class="vote_on_issues-issue-votes-nowrap">
-                <span id="vote_on_issues_nVotesUp"></span><%= image_tag 'arrow-u-r-green.png', :class => 'vote_on_issues-icon-votes', :plugin => 'vote_on_issues' %>
+              <span id="vote_on_issues_nVotesUp"><%= up_votes @issue %></span><%= image_tag 'arrow-u-r-green.png', :class => 'vote_on_issues-icon-votes', :plugin => 'vote_on_issues' %>
             </div>
             <div class="vote_on_issues-issue-votes-nowrap">
-                <span id="vote_on_issues_nVotesDn"></span><%= image_tag 'arrow-d-r-red.png', :class => 'vote_on_issues-icon-votes', :plugin => 'vote_on_issues' %>
+              <span id="vote_on_issues_nVotesDn"><%= down_votes @issue %></span><%= image_tag 'arrow-d-r-red.png', :class => 'vote_on_issues-icon-votes', :plugin => 'vote_on_issues' %>
             </div>
             
             <% if authorize_for('vote_on_issues', 'view_voters') %>
@@ -31,12 +31,6 @@
                 </div>
               </div>
             <% end %>
-            
-            <script>
-              vote_on_issues.showVotesOnIssue(<%= VoteOnIssue.getUpVoteCountOnIssue(@issue.id) %>, <%= VoteOnIssue.getDnVoteCountOnIssue(@issue.id) %>);
-              vote_on_issues.sImgUp = '<%= image_tag('arrow-u-r-green.png', :plugin => 'vote_on_issues') %>';
-              vote_on_issues.sImgDn = '<%= image_tag('arrow-d-r-red.png', :plugin => 'vote_on_issues') %>';
-            </script>
           </div>
         </div>
       </div>

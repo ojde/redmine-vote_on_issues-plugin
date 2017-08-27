@@ -1,8 +1,8 @@
-<% if User.current.allowed_to?(:view_votes, nil, :global => true) %>
-    vote_on_issues.showVotesOnIssue(<%= @nVotesUp %>, <%= @nVotesDn %>);
+<% if User.current.allowed_to?(:view_votes, @project) %>
+    vote_on_issues.showVotesOnIssue(<%= up_votes @issue %>, <%= down_votes @issue %>);
 <% end %>
 
-<% if User.current.allowed_to?(:view_voters, nil, :global => true) %>
+<% if User.current.allowed_to?(:view_voters, @project) %>
     vote_on_issues.hideListOfVoters();
 <% end %>
 
