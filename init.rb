@@ -20,9 +20,9 @@ Redmine::Plugin.register :vote_on_issues do
   requires_redmine  :version_or_higher => '3.3.2'
   
   project_module :vote_on_issues do
-    permission :cast_votes, {:issues => :cast_vote }, :require => :loggedin
-    permission :view_votes, {:issues => :view_votes}, :require => :loggedin
-    permission :view_voters, {:issues => :view_voters}, :require => :loggedin   
+    permission :cast_votes, {vote_on_issues: [:create, :destroy] }, :require => :loggedin
+    permission :view_votes, {vote_on_issues: [:show]}, :require => :loggedin
+    permission :view_voters, {vote_on_issues: :view_voters}, :require => :loggedin
   end
 
   # permission for menu
