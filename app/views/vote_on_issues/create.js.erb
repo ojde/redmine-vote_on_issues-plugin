@@ -1,0 +1,9 @@
+<% if User.current.allowed_to?(:view_votes, @project) %>
+    vote_on_issues.showVotesOnIssue(<%= up_votes @issue %>, <%= down_votes @issue %>);
+<% end %>
+
+<% if User.current.allowed_to?(:view_voters, @project) %>
+    vote_on_issues.hideListOfVoters();
+<% end %>
+
+vote_on_issues.showMyVote(<%= @iMyVote %>);

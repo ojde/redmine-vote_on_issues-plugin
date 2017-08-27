@@ -8,6 +8,11 @@ issue_query.add_available_column(VOI_QueryColumn.new(:sum_votes_up, :sortable =>
 issue_query.add_available_column(VOI_QueryColumn.new(:sum_votes_dn, :sortable => '(SELECT abs(sum(vote_val)) FROM vote_on_issues WHERE vote_val < 0 AND issue_id=issues.id )'))
 Issue.send(:include, VoteOnIssues::Patches::QueryPatch)
 
+ActionDispatch::Callbacks.to_prepare do
+  IssuesController.class_eval do
+    helper :vote_on_issues
+  end
+end
 
 Redmine::Plugin.register :vote_on_issues do
   name 'Vote On Issues'
@@ -20,9 +25,9 @@ Redmine::Plugin.register :vote_on_issues do
   requires_redmine  :version_or_higher => '3.3.2'
   
   project_module :vote_on_issues do
-    permission :cast_votes, {:issues => :cast_vote }, :require => :loggedin
-    permission :view_votes, {:issues => :view_votes}, :require => :loggedin
-    permission :view_voters, {:issues => :view_voters}, :require => :loggedin   
+    permission :cast_votes, {vote_on_issues: [:create, :destroy] }, :require => :loggedin
+    permission :view_votes, {vote_on_issues: [:show]}, :require => :loggedin
+    permission :view_voters, {vote_on_issues: :view_voters}, :require => :loggedin
   end
 
   # permission for menu
