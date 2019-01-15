@@ -3,7 +3,7 @@
   <div class="splitcontent">
     <% if authorize_for('issues', 'view_votes') %>
       <div class="splitcontentleft">
-        <div class="status attribute">
+        <div class="vote attribute">
           <div class="label"><%= l(:view_issues_label_votes) %>:</div>
           <div class="value">
             <div class="vote_on_issues-issue-votes-nowrap">
@@ -44,7 +44,7 @@
   
     <% if authorize_for('issues', 'cast_vote') %>
       <div class="splitcontentleft">
-        <div class="status attribute">
+        <div class="myvote attribute">
           <div class="label"><%= l(:view_issues_my_vote) %>:</div>
           <div class="value">
             <div class="vote_on_issues-issue-votes-nowrap">
