@@ -1,4 +1,4 @@
-require 'query'
+require_dependency 'query'
 
 class VOI_QueryColumn < QueryColumn
 =begin
