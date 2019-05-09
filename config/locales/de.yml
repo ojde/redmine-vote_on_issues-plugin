@@ -2,26 +2,27 @@
 de:
   # my_label: "My label"
   project_module_vote_on_issues: "Über Tickets abstimmen"
-  
+
   menu_title: "Abstimmungen"
 
-  permission_cast_votes: "Über Tickets abstimmen"  
+  permission_cast_votes: "Über Tickets abstimmen"
   permission_view_votes: "Stimmen anzeigen"
   permission_view_voter: "Abstimmer Anzeigen"
-  
+
   view_issues_label_votes: "Stimmen"
-  
+
   view_issues_label_voters: "Abstimmer"
   view_issues_show_voters: "Abstimmer anzeigen"
   view_issues_issue_voters: "Liste der Abstimmer"
-  
+
   view_issues_my_vote: "Meine Stimme"
   view_issues_my_vote_opt: "Ändern"
-  
+
   view_issues_my_vote_opt_up: "Hoch wählen"
   view_issues_my_vote_opt_dn: "Runter wählen"
   view_issues_my_vote_opt_nil: "Stimme zurück ziehen"
 
   field_sum_votes_up: "Stimmen hoch"
   field_sum_votes_dn: "Stimmen runter"
-  
+
+  field_sum_votes_up_and_dn: "Stimmen hoch und runter"
