@@ -1,4 +1,10 @@
-class CreateVoteOnIssues < ActiveRecord::Migration
+if Rails.version >= '5'
+  MigrationKlass = ActiveRecord::Migration[4.2]
+else
+  MigrationKlass = ActiveRecord::Migration
+end
+
+class CreateVoteOnIssues < MigrationKlass
   def self.up
     create_table :vote_on_issues do |t|
       t.datetime :created_at
@@ -9,7 +15,7 @@ class CreateVoteOnIssues < ActiveRecord::Migration
     end
     # add_index :vote_on_issues, [:issue_id, :user_id], unique: true
   end
-  
+
   def self.down
     drop_table :vote_on_issues
   end
