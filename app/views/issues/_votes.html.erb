@@ -1,0 +1,33 @@
+          <div class="value">
+            <div class="vote_on_issues-issue-votes-nowrap">
+                <span id="vote_on_issues_nVotesUp"></span><%= image_tag 'arrow-u-r-green.png', :class => 'vote_on_issues-icon-votes', :plugin => 'vote_on_issues' %>
+            </div>
+            <div class="vote_on_issues-issue-votes-nowrap">
+                <span id="vote_on_issues_nVotesDn"></span><%= image_tag 'arrow-d-r-red.png', :class => 'vote_on_issues-icon-votes', :plugin => 'vote_on_issues' %>
+            </div>
+
+            <% if authorize_for('issues', 'view_voters') %>
+              <div class="vote_on_issues-issue-votes-nowrap">
+                <%= link_to(l(:view_issues_label_voters), {:controller => 'vote_on_issues', :action => 'show_voters', :issue_id => @issue }, remote: true, :id => "vote_on_issues-link-voters", :class => 'vote_on_issues-link-voters', :title => l(:view_issues_show_voters) ) %>
+              </div>
+
+              <div id="vote_on_issues-issue-voters" style="display:none;">
+                <div>
+                    <table><tbody><tr>
+                      <td><%= l(:view_issues_issue_voters) %></td>
+                      <td onClick="vote_on_issues.hideListOfVoters()"><%= image_tag('delete-white.png', :plugin => 'vote_on_issues') %></td>
+                    </tr></tbody></table>
+                </div>
+                <div>
+                  <table><tbody id="vote_on_issues-issue-voters-list">
+                  </tbody></table>
+                </div>
+              </div>
+            <% end %>
+
+            <script>
+              vote_on_issues.showVotesOnIssue(<%= VoteOnIssue.getUpVoteCountOnIssue(@issue.id) %>, <%= VoteOnIssue.getDnVoteCountOnIssue(@issue.id) %>);
+              vote_on_issues.sImgUp = '<%= image_tag('arrow-u-r-green.png', :plugin => 'vote_on_issues') %>';
+              vote_on_issues.sImgDn = '<%= image_tag('arrow-d-r-red.png', :plugin => 'vote_on_issues') %>';
+            </script>
+          </div>
