@@ -1,7 +1,7 @@
 /**
 **
 **
-** @package 
+** @package
 ** @author     Ole Jungclaussen
 ** @version    1.0.0
 ** @.copyright 2017, Ole Jungclaussen
@@ -10,13 +10,13 @@ var vote_on_issues = {
     version : '1.0.0'
     ,sImgUp : ''
     ,sImgDn : ''
-    
+
     // ALL VOTES
     , showVotesOnIssue: function(nVotesUp, nVotesDn){
         $('#vote_on_issues_nVotesUp').html(nVotesUp);
         $('#vote_on_issues_nVotesDn').html(nVotesDn);
     }
-    
+
     // LIST OF VOTERS
     , isListOfVotersOpen : function() {
         return('none' != $('#vote_on_issues-issue-voters').css('display'));
@@ -37,12 +37,12 @@ var vote_on_issues = {
     , showListOfVoters : function() {
         var ListBox = $('#vote_on_issues-issue-voters');
         var Anchor  = $('#vote_on_issues-link-voters');
-        
+
         ListBox.css({
             top:  Anchor.position().top,
             left: Anchor.position().left
         });
-        
+
         if('none' == ListBox.css('display')){
             var that = this;
             $(document).on('click.vote_on_issues-ListBox', function() {
@@ -53,7 +53,7 @@ var vote_on_issues = {
                 e.stopPropagation(); // This is the preferred method.
                 return false;        // This should not be used unless you do not want
                                      // any click events registering inside the div
-            });  
+            });
             ListBox.show();
         }
     }
@@ -66,18 +66,18 @@ var vote_on_issues = {
         }
         this.clearListOfVoters();
     }
-    
+
     // MY VOTE
     , showMyVote : function(iUserVote){
-        
+
         $('#vote_on_issues_MyVoteNil').hide();
-        
+
         $('#vote_on_issues_MyVoteUpOn').hide();
         $('#vote_on_issues_MyVoteDnOn').hide();
         $('#vote_on_issues_MyVoteUpOff').hide();
         $('#vote_on_issues_MyVoteDnOff').hide();
         $('#vote_on_issues_MyVoteDelete').hide();
-        
+
         if(!iUserVote){
             $('#vote_on_issues_MyVoteNil').show();
             $('#vote_on_issues_MyVoteUpOff').show();
