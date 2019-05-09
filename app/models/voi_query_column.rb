@@ -1,6 +1,6 @@
 require 'query'
 
-class VOI_QueryColumn < QueryColumn
+class VoiQueryColumn < QueryColumn
 =begin
   attr_accessor :name, :sortable, :groupable, :default_order
   include Redmine::I18n
