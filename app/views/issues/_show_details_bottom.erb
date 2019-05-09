@@ -1,22 +1,14 @@
 <% if @project.module_enabled?(:vote_on_issues) %>
 
-  <div class="splitcontent">
-    <% if authorize_for('issues', 'view_votes') %>
-      <div class="splitcontentleft">
-        <div class="vote attribute">
-          <div class="label"><%= l(:view_issues_label_votes) %>:</div>
-<%= render partial: 'issues/votes' %>
-        </div>
-      </div>
-    <% end %>
+  <%= issue_fields_rows do |rows| %>
+<%
+    if authorize_for('issues', 'view_votes')
+      rows.left l(:view_issues_label_votes), render(partial: 'issues/votes')
+    end
 
-    <% if authorize_for('issues', 'cast_vote') %>
-      <div class="splitcontentleft">
-        <div class="myvote attribute">
-          <div class="label"><%= l(:view_issues_my_vote) %>:</div>
-<%= render partial: 'issues/my_votes' %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+   if authorize_for('issues', 'cast_vote')
+     rows.right l(:view_issues_my_vote), render(partial: 'issues/my_votes')
+   end
+%>
+  <% end %>
 <% end %>
