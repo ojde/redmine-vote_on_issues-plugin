@@ -1,5 +1,12 @@
+1.0.3: Added sum votes up and down column
+use Rails.configuration.to_prepare to permit hot reload
+downgraded version_or_higher to Redmine 2.6.10
+query_column -> voi_query_column
+Hot reload enabled in development
+Applied standard rails conventions
+==
 1.0.2: Added permission 'view voters'
 ==
 1.0.1: Added permission 'view votes'
-==       
+==
 1.0.0: Initial version
