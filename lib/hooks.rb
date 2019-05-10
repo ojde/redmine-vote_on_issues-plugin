@@ -6,7 +6,7 @@ module VoteOnIssuesHooks
       #       Html File expected is: /plugins/plugin_name/app/views/abc/_test.erb
       #     Otherwise we'll get a 404 on the whole view
       render_on :view_issues_show_details_bottom,
-                :partial => 'view_issues/show_details_bottom'
+                :partial => 'issues/show_details_bottom'
 
       # Writing Html code directly
       # render_on :view_issues_show_details_bottom, :inline => <<-END
@@ -54,7 +54,7 @@ end
 #       </div>
 #     </div>
 #   </div>
-#   ------ INSERT -------- 
+#   ------ INSERT --------
 #   <div class="splitcontent">
 #     <div class="splitcontentleft">
 #       <div class="status attribute">
@@ -63,5 +63,5 @@ end
 #       </div>
 #     </div>
 #   </div>
-#   ------ INSERT -------- 
+#   ------ INSERT --------
 # </div>

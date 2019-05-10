@@ -24,29 +24,30 @@ div.vote_on_issues-issue-votes-nowrap {
     left: 1em;
     width: 25em;
     max-width: 50%;
-    
+
     border: 2px solid #CCC;
     border-radius: 5px;
-    
+
     background-color: #FFF;
-    
+
     overflow: hidden;
-    
+
     box-shadow: 0.5em 0.5em 0.3em rgba(0,0,0,0.5);
 }
 #vote_on_issues-issue-voters > div:nth-child(1) {
     background-color: #628DB6;
     color:#FFF;
-} 
+}
 #vote_on_issues-issue-voters > div:nth-child(2) {
     border-radius: 0 0 5px 5px;
     padding:0.2em;
 
     min-height: 10vh;
     max-height: 40vh;
-    
+
     overflow: auto;
-}    
+}
+
 /* TITLE BAR */
 #vote_on_issues-issue-voters > div:nth-child(1) > table {
     width:100%;
@@ -66,6 +67,7 @@ div.vote_on_issues-issue-votes-nowrap {
     width:0.7em;
     height:0.7em;
 }
+
 /* LIST TABLE */
 #vote_on_issues-issue-voters > div:nth-child(2) > table {
     width:100%;
@@ -73,13 +75,14 @@ div.vote_on_issues-issue-votes-nowrap {
 }
 #vote_on_issues-issue-voters-list tr {
     border-bottom:1px solid #CCC;
-}  
+}
 #vote_on_issues-issue-voters-list tr:last-child {
     border-bottom:none;
-}  
-#vote_on_issues-issue-voters-list td {
-    
 }
+
+#vote_on_issues-issue-voters-list td {
+}
+
 #vote_on_issues-issue-voters-list td:nth-child(1) {
     width:16px;
 }
@@ -93,6 +96,7 @@ div.vote_on_issues-issue-votes-nowrap {
 #vote_on_issues-issue-voters-list span[data-vote-val="-1"] {
     color:#800;
 }
+
 /**
 **
 ** MY VOTE
@@ -101,12 +105,14 @@ div.vote_on_issues-issue-votes-nowrap {
 span.vote_on_issues-my-vote-opt {
     clear:left;
 }
+
 img.vote_on_issues-icon-votes {
     width:0.8em;
     height:0.8em;
     margin-left:0.2em;
     margin-right:0.8em;
-}    
+}
+
 .vote_on_issues-icon-vote {
     text-decoration: none !important;
 }

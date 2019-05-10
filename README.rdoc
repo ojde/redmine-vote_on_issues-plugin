@@ -2,32 +2,32 @@
 
 A plugin for Redmine[www.redmine.org] which allows users to up- or down-vote issues.
 
-Current version: 1.0.2
+Current version: 1.0.3
 
 Developed on Redmine 3.3.2
 
 == Usage
 
 * Install plugin
-  
+
   * Download latest release[https://github.com/ojde/redmine-vote_on_issues-plugin/releases]
-  
+
   * Extract into Redmine's plugin directory <tt><redmine_path>/plugins</tt>
-  
+
   * Rename the <tt>redmine-vote_on_issues-plugin-x.y.z</tt> directory to <tt>vote_on_issues</tt>
-  
+
   * Restart Redmine
-  
+
 * Enable for project
 
 * Enable permissions for roles (minimum requirement is
   always the user being logged in)
-  
+
   * "Vote on issue": Up- or down-vote on issues; change own votes or withdraw
     them. See own votes.
 
   * "View votes": See the total number of votes on an issue.
-  
+
   * "View voters": See who voted how on an issue.
 
 There are Up- and down-votes columns available for the issue listing.

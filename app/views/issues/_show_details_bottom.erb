@@ -1,0 +1,14 @@
+<% if @project.module_enabled?(:vote_on_issues) %>
+
+  <%= issue_fields_rows do |rows| %>
+<%
+    if authorize_for('issues', 'view_votes')
+      rows.left l(:view_issues_label_votes), render(partial: 'issues/votes')
+    end
+
+   if authorize_for('issues', 'cast_vote')
+     rows.right l(:view_issues_my_vote), render(partial: 'issues/my_votes')
+   end
+%>
+  <% end %>
+<% end %>

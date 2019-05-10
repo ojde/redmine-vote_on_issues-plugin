@@ -1,2 +1,0 @@
-module VoteOnIssuesHelper
-end

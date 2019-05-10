@@ -1,0 +1,27 @@
+# French strings go here for Rails i18n
+fr:
+  project_module_vote_on_issues: "Vote sur les Demandes"
+
+  menu_title: "Votes"
+
+  permission_cast_votes: "Vote sur les demandes"
+  permission_view_votes: "Voir votes"
+  permission_view_voter: "Voir voteurs"
+
+  view_issues_label_votes: "Votes"
+
+  view_issues_label_voters: "Voteurs"
+  view_issues_show_voters: "Montrer voteurs"
+  view_issues_issue_voters: "Liste des Voteurs"
+
+  view_issues_my_vote: "Mon vote"
+  view_issues_my_vote_opt: "Change"
+
+  view_issues_my_vote_opt_up: "Voter 👍"
+  view_issues_my_vote_opt_dn: "Voter 👎"
+  view_issues_my_vote_opt_nil: "Annule vote"
+
+  field_sum_votes_up: "Votes 👍"
+  field_sum_votes_dn: "Votes 👎"
+
+  field_sum_votes_up_and_dn: "Votes total"
