@@ -1,6 +1,5 @@
 class VoteOnIssuesController < ApplicationController
   # respond_to :html, :js
-  unloadable
 
   #Authorize against global permissions defined in init.rb
   # ?? does prevent everythin below admin?

@@ -1,6 +1,4 @@
 class VoteOnIssue < ActiveRecord::Base
-  unloadable
-  
   # Every vote belongs to a user and an issue
   belongs_to :user
   belongs_to :issue
@@ -25,20 +23,19 @@ class VoteOnIssue < ActiveRecord::Base
   end
 
   def self.getListOfUpVotersOnIssue(issue_id)
-    # this does load the users, but costly: One query for each user
-      # where("issue_id = ? AND vote_val > 0", issue_id)
-    # this does load the users, less costly: One query for all users
-      # includes(:user).where("issue_id = ? AND vote_val > 0", issue_id)
-      # where("issue_id = ? AND vote_val > 0", issue_id).includes(:user)
-    # joins users successfully, but still execs one query for each user 
-      # where("issue_id = ? AND vote_val > 0", issue_id).joins(:user)
-    # This does what I want, but I'd love to find out how to do this in rails...
-    find_by_sql( ["SELECT `vote_on_issues`.`vote_val` AS vote_val, `users`.`login` AS user_login FROM `vote_on_issues` LEFT JOIN `users` ON (`users`.`id` = `vote_on_issues`.`user_id`) WHERE (`issue_id` = ? AND `vote_val` > 0) ORDER BY user_login ASC", issue_id] )
+    joins(:user).
+      where(issue_id: issue_id).
+      where('vote_on_issues.vote_val > ?', 0).
+      order('users.login ASC').
+      select('vote_on_issues.vote_val AS vote_val, users.login AS user_login')
   end
   
   def self.getListOfDnVotersOnIssue(issue_id)
-    # see getListOfUpVotersOnIssue
-    find_by_sql( ["SELECT `vote_on_issues`.`vote_val` AS vote_val, `users`.`login` AS user_login FROM `vote_on_issues` LEFT JOIN `users` ON (`users`.`id` = `vote_on_issues`.`user_id`) WHERE (`issue_id` = ? AND `vote_val` < 0) ORDER BY user_login ASC", issue_id] )
+    joins(:user).
+      where(issue_id: issue_id).
+      where('vote_on_issues.vote_val < ?', 0).
+      order('users.login ASC').
+      select('vote_on_issues.vote_val AS vote_val, users.login AS user_login')
   end
   
 end
