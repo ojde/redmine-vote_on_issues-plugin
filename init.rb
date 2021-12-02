@@ -12,12 +12,12 @@ Issue.send(:include, VoteOnIssues::Patches::QueryPatch)
 Redmine::Plugin.register :vote_on_issues do
   name 'Vote On Issues'
   description 'This plugin allows to up- and down-vote issues.'
-  version '1.0.2'
+  version '1.0.3'
   url 'https://github.com/ojde/redmine-vote_on_issues-plugin'
   author 'Ole Jungclaussen'
   author_url 'https://jungclaussen.com'
   
-  requires_redmine  :version_or_higher => '3.3.2'
+  requires_redmine  :version_or_higher => '4.0.0'
   
   project_module :vote_on_issues do
     permission :cast_votes, {:issues => :cast_vote }, :require => :loggedin

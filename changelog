@@ -1,5 +1,7 @@
+1.0.3: Adjusted database table creation to redmine 4.x
+==
 1.0.2: Added permission 'view voters'
 ==
 1.0.1: Added permission 'view votes'
-==       
+==
 1.0.0: Initial version

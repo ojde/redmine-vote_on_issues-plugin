@@ -2,9 +2,9 @@
 
 A plugin for Redmine[www.redmine.org] which allows users to up- or down-vote issues.
 
-Current version: 1.0.2
+Current version: 1.0.3
 
-Developed on Redmine 3.3.2
+Developed on Redmine 4.2.3
 
 == Usage
 
@@ -34,4 +34,4 @@ There are Up- and down-votes columns available for the issue listing.
 
 == Copyright
 
-Copyright (c) 2017 Ole Jungclaussen. See LICENSE for details.
+Copyright (c) 2017-21 Ole Jungclaussen. See LICENSE for details.
