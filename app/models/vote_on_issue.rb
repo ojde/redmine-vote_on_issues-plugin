@@ -1,6 +1,4 @@
 class VoteOnIssue < ActiveRecord::Base
-  unloadable
-  
   # Every vote belongs to a user and an issue
   belongs_to :user
   belongs_to :issue
