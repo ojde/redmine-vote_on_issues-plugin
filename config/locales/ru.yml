@@ -1,5 +1,5 @@
-# English strings go here for Rails i18n
-en:
+# Russian strings go here for Rails i18n
+ru:
   # my_label: "My label"
   project_module_vote_on_issues: "Голосование по задачам"
   
