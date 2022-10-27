@@ -7,7 +7,7 @@ ru:
 
   permission_cast_votes: "Голосование в задачах"  
   permission_view_votes: "Просмотр голосов"
-  permission_view_voter: "Просмотр голосовавших"
+  permission_view_voters: "Просмотр голосовавших"
   
   view_issues_label_votes: "Голоса"
   

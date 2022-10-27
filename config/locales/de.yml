@@ -1,4 +1,4 @@
-# English strings go here for Rails i18n
+# German strings go here for Rails i18n
 de:
   # my_label: "My label"
   project_module_vote_on_issues: "Über Tickets abstimmen"
@@ -7,7 +7,7 @@ de:
 
   permission_cast_votes: "Über Tickets abstimmen"  
   permission_view_votes: "Stimmen anzeigen"
-  permission_view_voter: "Abstimmer Anzeigen"
+  permission_view_voters: "Abstimmer Anzeigen"
   
   view_issues_label_votes: "Stimmen"
   

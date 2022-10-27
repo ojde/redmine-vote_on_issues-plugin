@@ -7,7 +7,7 @@ en:
 
   permission_cast_votes: "Vote on issues"  
   permission_view_votes: "View votes"
-  permission_view_voter: "View voters"
+  permission_view_voters: "View voters"
   
   view_issues_label_votes: "Votes"
   
