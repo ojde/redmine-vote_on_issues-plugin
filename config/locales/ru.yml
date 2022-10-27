@@ -1,0 +1,27 @@
+# English strings go here for Rails i18n
+en:
+  # my_label: "My label"
+  project_module_vote_on_issues: "Голосование по задачам"
+  
+  menu_title: "Голосования"
+
+  permission_cast_votes: "Голосование в задачах"  
+  permission_view_votes: "Просмотр голосов"
+  permission_view_voter: "Просмотр голосовавших"
+  
+  view_issues_label_votes: "Голоса"
+  
+  view_issues_label_voters: "Голосовавшие"
+  view_issues_show_voters: "Показать проголосовавших"
+  view_issues_issue_voters: "Список проголосовавших"
+  
+  view_issues_my_vote: "Мой выбор"
+  view_issues_my_vote_opt: "Изменить"
+  
+  view_issues_my_vote_opt_up: "За"
+  view_issues_my_vote_opt_dn: "Против"
+  view_issues_my_vote_opt_nil: "Отменить"
+
+  field_sum_votes_up: "За"
+  field_sum_votes_dn: "Против"
+  
